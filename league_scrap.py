@@ -27,7 +27,7 @@ def page_scrap(x):
         clubURL.append(web.get('href'))
 
     # Crear data frame con club y url para hacer scrap a jugadores
-    df = pd.DataFrame({"League":pageSoup.title.string, "Club Name":clubName, "URL":clubURL})
+    df = pd.DataFrame({"League":pageSoup.title.string[:-22], "Club Name":clubName, "URL":clubURL})
     
     return df.reset_index(drop=True)
 
